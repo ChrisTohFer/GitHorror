@@ -89,6 +89,8 @@ public class Monster : MonoBehaviour
             {
                 Agent.SetPath(path);
             }
+            else
+                SetMoving();    //Reset to moving if we can't reach the player (this will be repeatedly called each frame but it's probably fine...)
         }
     }
     public void UpdateAttacking()
@@ -141,10 +143,12 @@ public class Monster : MonoBehaviour
         Animator.SetInteger("Animation", 0);
         m_state = State.CHASING;
         NavMeshPath path = new NavMeshPath();
-        if(Agent.CalculatePath(playerTransform.position, path) && path.status == NavMeshPathStatus.PathComplete)
+        if (Agent.CalculatePath(playerTransform.position, path) && path.status == NavMeshPathStatus.PathComplete)
         {
             Agent.SetPath(path);
         }
+        else
+            SetMoving();    //Reset to moving if we can't reach the player (this will be repeatedly called each frame but it's probably fine...)
         
     }
     public void SetAttacking()
@@ -163,6 +167,8 @@ public class Monster : MonoBehaviour
         {
             Agent.SetPath(path);
         }
+        else
+            Agent.ResetPath();
     }
     public void SetHitstun()
     {
