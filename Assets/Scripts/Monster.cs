@@ -20,10 +20,12 @@ public class Monster : MonoBehaviour
     public NavMeshAgent Agent;
     public Collider Collider;
     public Animator Animator;
-    public float AttackDuration;
-    public float StunDuration;
-    public float AttackRange;
     public Transform playerTransform;
+    public float Health = 100f;
+    public float AttackDuration;
+    public float AttackRange;
+    public float Damage = 10f;
+    public float StunDuration;
 
     //
     Vector3 m_startPosition;
@@ -38,6 +40,9 @@ public class Monster : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (Health <= 0f)
+            SetDead();
+
         switch (m_state)
         {
             case State.IDLE:
