@@ -21,6 +21,14 @@ public static class PlayerStats
         {
             return m_value;
         }
+        public float MaxValue()
+        {
+            return m_max;
+        }
+        public float MinValue()
+        {
+            return m_min;
+        }
         public void SetValue(float value)
         {
             m_value = Mathf.Clamp(value, m_min, m_max);
@@ -54,20 +62,24 @@ public static class PlayerStats
     {
         return m_stats[name].Value();
     }
-    public static bool HasKeyItem(string name)
+    public static bool StatMaxed(string name)
+    {
+        return m_stats[name].Value() == m_stats[name].MaxValue();
+    }
+    public static bool HasKeyItem(KeyItem requiredItem)
     {
         foreach(KeyItem item in m_keyItems)
         {
-            if (item.name == name)
+            if (item.name == requiredItem.name)
                 return true;
         }
         return false;
     }
-    public static bool HasMultipleKeyItems(string[] names)
+    public static bool HasMultipleKeyItems(KeyItem[] items)
     {
-        foreach(string itemName in names)
+        foreach(KeyItem item in items)
         {
-            if (!HasKeyItem(itemName))
+            if (!HasKeyItem(item))
                 return false;
         }
         return true;
@@ -76,10 +88,12 @@ public static class PlayerStats
     public static void SetStat(string name, float value)
     {
         m_stats[name].SetValue(value);
+        Debug.Log(name + " is now " + m_stats[name].Value());
     }
     public static void ChangeStat(string name, float change)
     {
         m_stats[name].ChangeValue(change);
+        Debug.Log(name + " is now " + m_stats[name].Value());
     }
 
     public static void AddKeyItem(KeyItem item)

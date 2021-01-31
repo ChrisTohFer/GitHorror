@@ -6,7 +6,7 @@ public class SlidingDoor : MonoBehaviour
 {
     public Vector3 OpenOffset = new Vector3(0f, 3f, 0f);
     public float OpenTime = 1f;
-    public string[] RequiredKeyItems;
+    public KeyItem[] RequiredKeyItems;
 
     bool m_open = false;
     Vector3 ClosedPosition;
