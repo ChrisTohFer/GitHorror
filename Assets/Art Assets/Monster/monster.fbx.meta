@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 570f5d2d3071b2048ba284faf8c764d7
+guid: 6e21856db8984c5489c29fdecb29600c
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
@@ -13,11 +13,8 @@ ModelImporter:
       74: 8349542763059015795
     second: Armature|Walk
   - first:
-      74: 3800721468275536773
-    second: Armature|Walk (1)
-  - first:
-      74: 5899535236448829564
-    second: Armature|Walk (2)
+      74: -236022367644965580
+    second: Armature|Idle (1)
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -47,8 +44,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Walk (2)
-      takeName: Armature|Walk
+      name: Armature|Idle (1)
+      takeName: Armature|Idle
       internalID: 0
       firstFrame: 0
       lastFrame: 24
@@ -76,8 +73,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Walk (1)
-      takeName: Armature|Walk
+      name: Armature|Idle
+      takeName: Armature|Idle
       internalID: 0
       firstFrame: 0
       lastFrame: 24
@@ -187,7 +184,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.0018000001
+    globalScale: 0.18
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
