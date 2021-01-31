@@ -63,6 +63,15 @@ public static class PlayerStats
         }
         return false;
     }
+    public static bool HasMultipleKeyItems(string[] names)
+    {
+        foreach(string itemName in names)
+        {
+            if (!HasKeyItem(itemName))
+                return false;
+        }
+        return true;
+    }
 
     public static void SetStat(string name, float value)
     {

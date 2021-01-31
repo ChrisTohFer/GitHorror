@@ -27,15 +27,11 @@ public class PlayerInteraction : MonoBehaviour
     //Raycast from the player to see if they are looking at something interactable
     void UpdateInteractableTarget()
     {
-        Debug.Log("Casting Ray");
         RaycastHit hit;
         if(Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f)), out hit, InteractionRange, ~LayerMask.GetMask("Player")))
         {
-            Debug.Log("In Range");
             //Note that this might still be null if the target is non-interactable
             m_interactTarget = hit.transform.GetComponent<Interactable>();
-
-            Debug.Log("Is " + (m_interactTarget == null ? "not interactable" : "interactable"));
             return;
         }
         //We didn't hit anything in range
