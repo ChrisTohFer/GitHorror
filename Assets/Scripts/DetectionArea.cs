@@ -23,10 +23,12 @@ public class DetectionArea : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        containsPlayer = true;
+        if(other.gameObject.layer == 6) //Magic numbers SUCK
+            containsPlayer = true;
     }
     private void OnTriggerExit(Collider other)
     {
-        containsPlayer = false;
+        if (other.gameObject.layer == 6) //Magic numbers SUCK
+            containsPlayer = false;
     }
 }
