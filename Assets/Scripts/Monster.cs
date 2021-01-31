@@ -19,6 +19,7 @@ public class Monster : MonoBehaviour
     public DetectionArea DetectionArea;
     public NavMeshAgent Agent;
     public Collider Collider;
+    public Animator Animator;
     public float AttackDuration;
     public float StunDuration;
     public float AttackRange;
@@ -128,38 +129,38 @@ public class Monster : MonoBehaviour
     //State transitions
     public void SetIdle()
     {
-        //todo: change animation
+        Animator.SetInteger("Animation", 0);
         m_state = State.IDLE;
     }
     public void SetChasing()
     {
-        //todo: change animation
+        Animator.SetInteger("Animation", 0);
         m_state = State.CHASING;
         Agent.SetDestination(playerTransform.position);
     }
     public void SetAttacking()
     {
-        //todo: change animation
+        Animator.SetInteger("Animation", 1);
         m_state = State.ATTACKING;
         m_stateTimer = AttackDuration;
         Agent.ResetPath();
     }
     public void SetMoving()
     {
-        //todo: change animation
+        Animator.SetInteger("Animation", 0);
         m_state = State.MOVING;
         Agent.SetDestination(m_startPosition);
     }
     public void SetHitstun()
     {
-        //todo: change animation
+        Animator.SetInteger("Animation", 0);
         m_state = State.HITSTUN;
         m_stateTimer = StunDuration;
         Agent.ResetPath();
     }
     public void SetDead()
     {
-        //todo: change animation
+        Animator.SetInteger("Animation", 0);
         m_state = State.DEAD;
         Agent.ResetPath();
         Collider.enabled = false;

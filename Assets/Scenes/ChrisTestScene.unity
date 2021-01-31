@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 155657713}
   - component: {fileID: 155657712}
   - component: {fileID: 155657711}
+  - component: {fileID: 155657717}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Untagged
@@ -159,6 +160,7 @@ MonoBehaviour:
   DetectionArea: {fileID: 1059209458}
   Agent: {fileID: 155657712}
   Collider: {fileID: 155657713}
+  Animator: {fileID: 155657717}
   AttackDuration: 1
   StunDuration: 1
   AttackRange: 2
@@ -260,8 +262,27 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &155657717
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155657710}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 22cd5e12a9aa99342be4ec6e9945240d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &267125613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1243,7 +1264,7 @@ Transform:
   m_LocalScale: {x: 100, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1111696942
 GameObject:
