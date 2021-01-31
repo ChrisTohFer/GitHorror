@@ -84,7 +84,11 @@ public class Monster : MonoBehaviour
         else
         {
             //Update path if player still needs chasing
-            Agent.SetDestination(playerTransform.position);
+            NavMeshPath path = new NavMeshPath();
+            if (Agent.CalculatePath(playerTransform.position, path) && path.status == NavMeshPathStatus.PathComplete)
+            {
+                Agent.SetPath(path);
+            }
         }
     }
     public void UpdateAttacking()
@@ -136,7 +140,12 @@ public class Monster : MonoBehaviour
     {
         Animator.SetInteger("Animation", 0);
         m_state = State.CHASING;
-        Agent.SetDestination(playerTransform.position);
+        NavMeshPath path = new NavMeshPath();
+        if(Agent.CalculatePath(playerTransform.position, path) && path.status == NavMeshPathStatus.PathComplete)
+        {
+            Agent.SetPath(path);
+        }
+        
     }
     public void SetAttacking()
     {
@@ -149,7 +158,11 @@ public class Monster : MonoBehaviour
     {
         Animator.SetInteger("Animation", 0);
         m_state = State.MOVING;
-        Agent.SetDestination(m_startPosition);
+        NavMeshPath path = new NavMeshPath();
+        if (Agent.CalculatePath(m_startPosition, path) && path.status == NavMeshPathStatus.PathComplete)
+        {
+            Agent.SetPath(path);
+        }
     }
     public void SetHitstun()
     {
