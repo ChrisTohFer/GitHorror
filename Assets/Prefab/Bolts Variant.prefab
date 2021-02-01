@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4939571022459170796, guid: d37593c52ff797541ab0177b47516774, type: 3}
       propertyPath: m_Name
-      value: Bolts
+      value: Bolts Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6539547167615657403, guid: d37593c52ff797541ab0177b47516774, type: 3}
       propertyPath: Name
@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6539547167615657403, guid: d37593c52ff797541ab0177b47516774, type: 3}
       propertyPath: Quantity
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d37593c52ff797541ab0177b47516774, type: 3}
