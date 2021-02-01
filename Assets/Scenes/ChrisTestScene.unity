@@ -2022,26 +2022,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!1 &1998438928 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4932274502187022895, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
-  m_PrefabInstance: {fileID: 4933284215752683937}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1998438933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1998438928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdcd06815c47d30489f70df42db56a48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  frustumSettings:
-    baseSettings: {fileID: 1016991178}
-    qualitySettings: {fileID: 1692610325}
 --- !u!1 &2054098035
 GameObject:
   m_ObjectHideFlags: 0
@@ -2181,6 +2161,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1998438933, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: frustumSettings.baseSettings
+      value: 
+      objectReference: {fileID: 1016991178}
+    - target: {fileID: 1998438933, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: frustumSettings.qualitySettings
+      value: 
+      objectReference: {fileID: 1692610325}
     - target: {fileID: 4931645865086761579, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2228,10 +2216,6 @@ PrefabInstance:
     - target: {fileID: 4934052543510258497, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5036074565814408877, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
-      propertyPath: sprintKey
-      value: 304
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}

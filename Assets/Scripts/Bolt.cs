@@ -29,7 +29,7 @@ public class Bolt : MonoBehaviour
         {
             //Enemy
             Monster monster = collision.gameObject.GetComponent<Monster>();
-            monster.Health = Mathf.Clamp(monster.Health - Damage, 0f, 10000f);
+            monster.TakeDamage(Damage);
             Destroy(gameObject);
         }
         else

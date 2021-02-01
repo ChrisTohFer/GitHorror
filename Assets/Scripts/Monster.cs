@@ -66,6 +66,13 @@ public class Monster : MonoBehaviour
         }
     }
 
+    public void TakeDamage(float damage)
+    {
+        Health = Mathf.Clamp(Health - damage, 0f, 10000f);
+        if (Health > 0f)
+            SetHitstun();
+    }
+
     //Per-state update methods
     public void UpdateIdle()
     {
