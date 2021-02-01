@@ -145,7 +145,7 @@ public class Monster : MonoBehaviour
     }
     public void SetChasing()
     {
-        Animator.SetInteger("Animation", 0);
+        Animator.SetInteger("Animation", 1);
         m_state = State.CHASING;
         NavMeshPath path = new NavMeshPath();
         if (Agent.CalculatePath(playerTransform.position, path) && path.status == NavMeshPathStatus.PathComplete)
@@ -158,14 +158,14 @@ public class Monster : MonoBehaviour
     }
     public void SetAttacking()
     {
-        Animator.SetInteger("Animation", 1);
+        Animator.SetInteger("Animation", 2);
         m_state = State.ATTACKING;
         m_stateTimer = AttackDuration;
         Agent.ResetPath();
     }
     public void SetMoving()
     {
-        Animator.SetInteger("Animation", 0);
+        Animator.SetInteger("Animation", 1);
         m_state = State.MOVING;
         NavMeshPath path = new NavMeshPath();
         if (Agent.CalculatePath(m_startPosition, path) && path.status == NavMeshPathStatus.PathComplete)
@@ -184,7 +184,7 @@ public class Monster : MonoBehaviour
     }
     public void SetDead()
     {
-        Animator.SetInteger("Animation", 0);
+        Animator.SetInteger("Animation", 3);
         m_state = State.DEAD;
         Agent.ResetPath();
         Collider.enabled = false;
