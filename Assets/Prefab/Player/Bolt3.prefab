@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3148193835168511791}
   - component: {fileID: 5110799351248768653}
+  - component: {fileID: 4238927889425925679}
   m_Layer: 7
   m_Name: Bolt3
   m_TagString: Untagged
@@ -48,6 +49,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &4238927889425925679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3148193835168511790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d39c6d4e128c26847a7c0a63b7dc910e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 40
+  SpeedThreshold: 40
+  DisappearTime: 2
+  Rigidbody: {fileID: 5110799351248768653}
 --- !u!136 &701481499780222632
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -55,7 +72,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4796178935039307442}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ab2fac1ae18623e46bc313316e43de02, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.014017131
