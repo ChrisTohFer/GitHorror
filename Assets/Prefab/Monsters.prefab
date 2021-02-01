@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5878000681037370419}
   - component: {fileID: 7508867670166310308}
   - component: {fileID: 444667765608208128}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DetectionArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,9 +107,9 @@ MonoBehaviour:
   Agent: {fileID: 3053647457273684623}
   Collider: {fileID: 8060777485590667681}
   Animator: {fileID: 4786183809741591778}
-  playerTransform: {fileID: 0}
   Health: 100
   AttackDuration: 1
+  AttackActivationTime: 0
   AttackRange: 2
   Damage: 10
   StunDuration: 1

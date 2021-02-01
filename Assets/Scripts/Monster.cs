@@ -22,6 +22,7 @@ public class Monster : MonoBehaviour
     public Animator Animator;
     public float Health = 100f;
     public float AttackDuration;
+    public float AttackActivationTime;
     public float AttackRange;
     public float Damage = 10f;
     public float StunDuration;
@@ -31,6 +32,7 @@ public class Monster : MonoBehaviour
     State m_state = State.IDLE;
     float m_stateTimer = 0f;
     Transform playerTransform;
+    bool m_attackActivated = false;
 
     //
     private void Start()
@@ -108,8 +110,15 @@ public class Monster : MonoBehaviour
     }
     public void UpdateAttacking()
     {
+        transform.LookAt(playerTransform);
         //Attack state is controlled by animation
         m_stateTimer -= Time.fixedDeltaTime;
+        if(m_stateTimer < AttackDuration - AttackActivationTime && !m_attackActivated && Vector3.Distance(transform.position, playerTransform.position) < AttackRange)
+        {
+            PlayerManager player = playerTransform.GetComponent<PlayerManager>();
+            player.TakeDamage(Damage);
+            m_attackActivated = true;
+        }
         if (m_stateTimer < 0)
         {
             SetChasing();
@@ -170,6 +179,7 @@ public class Monster : MonoBehaviour
         m_state = State.ATTACKING;
         m_stateTimer = AttackDuration;
         Agent.ResetPath();
+        m_attackActivated = false;
     }
     public void SetMoving()
     {

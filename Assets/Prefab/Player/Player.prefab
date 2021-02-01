@@ -694,6 +694,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bead2ec08ae77ef4c935587691faa3a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerInteraction: {fileID: 4933284215074189947}
+  Crossbow: {fileID: 1743904051284939}
+  FP: {fileID: 5036074565814408877}
 --- !u!1 &4932154596607295259
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ public class PlayerManager : MonoBehaviour
     public PlayerInteraction PlayerInteraction;
     public Crossbow Crossbow;
     public FirstPersonAIO FP;
+    public float CamShakeTime = 0.1f;
+    public float CamShakeIntensity = 0.05f;
 
     private void Awake()
     {
@@ -24,6 +26,10 @@ public class PlayerManager : MonoBehaviour
             PlayerInteraction.enabled = false;
             Crossbow.enabled = false;
             FP.enabled = false;
+        }
+        else
+        {
+            StartCoroutine(FP.CameraShake(CamShakeTime, CamShakeIntensity));
         }
     }
 }

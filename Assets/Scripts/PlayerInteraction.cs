@@ -30,7 +30,7 @@ public class PlayerInteraction : MonoBehaviour
         var oldInteractTarget = m_interactTarget;
 
         RaycastHit hit;
-        if(Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f)), out hit, InteractionRange, ~LayerMask.GetMask("Player")))
+        if(Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f)), out hit, InteractionRange, ~(LayerMask.GetMask("Player") + LayerMask.GetMask("Field"))))
         {
             //Note that this might still be null if the target is non-interactable
             m_interactTarget = hit.transform.GetComponent<Interactable>();
