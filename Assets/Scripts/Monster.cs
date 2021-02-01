@@ -20,7 +20,6 @@ public class Monster : MonoBehaviour
     public NavMeshAgent Agent;
     public Collider Collider;
     public Animator Animator;
-    public Transform playerTransform;
     public float Health = 100f;
     public float AttackDuration;
     public float AttackRange;
@@ -31,11 +30,13 @@ public class Monster : MonoBehaviour
     Vector3 m_startPosition;
     State m_state = State.IDLE;
     float m_stateTimer = 0f;
+    Transform playerTransform;
 
     //
     private void Start()
     {
         m_startPosition = transform.position;
+        playerTransform = PlayerManager.Singleton.transform;
     }
 
     private void FixedUpdate()

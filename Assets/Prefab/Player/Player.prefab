@@ -360,6 +360,7 @@ GameObject:
   - component: {fileID: 5036074565814408877}
   - component: {fileID: 4933284215074189947}
   - component: {fileID: 1743904051284939}
+  - component: {fileID: 212230590794768649}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -681,6 +682,18 @@ MonoBehaviour:
   BoltSpeed: 100
   ChargingWalkSpeedModifier: 0.5
   FP: {fileID: 5036074565814408877}
+--- !u!114 &212230590794768649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4931645865086761579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bead2ec08ae77ef4c935587691faa3a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4932154596607295259
 GameObject:
   m_ObjectHideFlags: 0
