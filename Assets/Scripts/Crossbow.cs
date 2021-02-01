@@ -13,13 +13,19 @@ public class Crossbow : MonoBehaviour
     public float CrankSpinSpeed = 60f;
     public GameObject BoltPrefab;
     public float BoltSpeed;
+    public float ChargingWalkSpeedModifier = .5f;
+    public FirstPersonAIO FP;
 
     Vector3 m_anchorStartPos;
     bool m_buttonHeld = false;
     float m_pull = 0f;
+    float m_normalWalkSpeed;
+    float m_normalSprintSpeed;
 
     void Start()
     {
+        m_normalWalkSpeed = FP.walkSpeed;
+        m_normalSprintSpeed = FP.sprintSpeed;
         m_anchorStartPos = StringAnchor.localPosition;
     }
 
@@ -40,8 +46,19 @@ public class Crossbow : MonoBehaviour
             PlayerStats.ChangeStat("bolts", -1f);
         }
 
-        //Bolt visibility
-        SlottedBolt.SetActive(m_buttonHeld && PlayerStats.GetStat("bolts") > 0f);
+        //Bolt visibility and walk speed
+        if(m_buttonHeld && PlayerStats.GetStat("bolts") > 0f)
+        {
+            SlottedBolt.SetActive(true);
+            FP.walkSpeed = m_normalWalkSpeed * ChargingWalkSpeedModifier;
+            FP.sprintSpeed = m_normalSprintSpeed * ChargingWalkSpeedModifier;
+        }
+        else
+        {
+            SlottedBolt.SetActive(false);
+            FP.walkSpeed = m_normalWalkSpeed;
+            FP.sprintSpeed = m_normalSprintSpeed;
+        }
 
         //Update pull
         m_pull += Time.fixedDeltaTime * 1f / (m_buttonHeld ? DrawTime : FireTime) * (m_buttonHeld ? 1f : -1f);

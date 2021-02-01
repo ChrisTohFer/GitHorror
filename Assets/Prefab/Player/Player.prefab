@@ -538,7 +538,7 @@ MonoBehaviour:
   playerCanMove: 1
   walkByDefault: 1
   walkSpeed: 4
-  sprintKey: 268
+  sprintKey: 304
   sprintSpeed: 8
   jumpPower: 5
   canJump: 1
@@ -679,6 +679,8 @@ MonoBehaviour:
   CrankSpinSpeed: 100
   BoltPrefab: {fileID: 3148193835168511790, guid: fde050fb8ea65b24cb0bf9adfaadbd29, type: 3}
   BoltSpeed: 100
+  ChargingWalkSpeedModifier: 0.5
+  FP: {fileID: 5036074565814408877}
 --- !u!1 &4932154596607295259
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,6 +724,7 @@ GameObject:
   - component: {fileID: 4917696800910542029}
   - component: {fileID: 4996683117678999275}
   - component: {fileID: 5030021696582004041}
+  - component: {fileID: 1998438933}
   m_Layer: 6
   m_Name: Player Camera
   m_TagString: MainCamera
@@ -803,6 +806,21 @@ Behaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4932274502187022895}
   m_Enabled: 1
+--- !u!114 &1998438933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4932274502187022895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdcd06815c47d30489f70df42db56a48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frustumSettings:
+    baseSettings: {fileID: 0}
+    qualitySettings: {fileID: 0}
 --- !u!1001 &1219831270236674027
 PrefabInstance:
   m_ObjectHideFlags: 0
