@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4786183809741591778, guid: 8291b209c37384c4a843228cc7147789, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a5b916692e972c044931d7d8a8eb9888, type: 2}
     - target: {fileID: 7026618005545643645, guid: 8291b209c37384c4a843228cc7147789, type: 3}
       propertyPath: m_RootOrder
       value: 0

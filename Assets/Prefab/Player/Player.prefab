@@ -542,11 +542,11 @@ MonoBehaviour:
   sprintKey: 304
   sprintSpeed: 8
   jumpPower: 5
-  canJump: 1
+  canJump: 0
   canHoldJump: 0
   useStamina: 1
   staminaDepletionSpeed: 2
-  staminaLevel: 50
+  staminaLevel: 10
   speed: 0
   staminaInternal: 0
   _crouchModifiers:
@@ -697,6 +697,10 @@ MonoBehaviour:
   PlayerInteraction: {fileID: 4933284215074189947}
   Crossbow: {fileID: 1743904051284939}
   FP: {fileID: 5036074565814408877}
+  CamShakeTime: 0.1
+  CamShakeIntensity: 0.05
+  StartingBolts: 3
+  StartingMedKits: 0
 --- !u!1 &4932154596607295259
 GameObject:
   m_ObjectHideFlags: 0

@@ -65,6 +65,7 @@ MonoBehaviour:
   SpeedThreshold: 40
   DisappearTime: 2
   Rigidbody: {fileID: 5110799351248768653}
+  HeadShotMultiplier: 2
 --- !u!136 &701481499780222632
 CapsuleCollider:
   m_ObjectHideFlags: 0
