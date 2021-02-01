@@ -8,6 +8,7 @@ public class Bolt : MonoBehaviour
     public float SpeedThreshold = 40f;
     public float DisappearTime = 2f;
     public Rigidbody Rigidbody;
+    public float HeadShotMultiplier = 3f;
 
     float m_timeUnderSpeed = 0;
 
@@ -27,9 +28,16 @@ public class Bolt : MonoBehaviour
     {
         if(collision.gameObject.layer == 8) //MAGIC NUMBERS SUCK
         {
-            //Enemy
-            Monster monster = collision.gameObject.GetComponent<Monster>();
-            monster.TakeDamage(Damage);
+            if(collision.gameObject.tag == "Head")
+            {
+                Monster monster = collision.gameObject.GetComponentInParent<Monster>();
+                monster.TakeDamage(Damage * HeadShotMultiplier);
+            }
+            else
+            {
+                Monster monster = collision.gameObject.GetComponent<Monster>();
+                monster.TakeDamage(Damage);
+            }
             Destroy(gameObject);
         }
         else
