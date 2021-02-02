@@ -42,7 +42,18 @@ public class Crossbow : MonoBehaviour
         //Fire
         if (m_pull == 1f && m_buttonHeld == false && PlayerStats.GetStat("bolts") > 0f)
         {
-            Fire();
+            Vector3 target;
+            RaycastHit hit;
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f)), out hit, 100000f, ~(LayerMask.GetMask("Player") + LayerMask.GetMask("Field"))))
+            {
+                target = hit.point;
+            }
+            else
+            {
+                target = StringAnchor.position + (Camera.main.transform.rotation * Vector3.forward);
+            }
+   
+            Fire(target);
             PlayerStats.ChangeStat("bolts", -1f);
         }
 
@@ -74,10 +85,11 @@ public class Crossbow : MonoBehaviour
     {
         StringAnchor.localPosition = Vector3.Lerp(m_anchorStartPos, StringFinalPosition, pull);
     }
-    void Fire()
+    void Fire(Vector3 target)
     {
-        var gameObject = Instantiate(BoltPrefab, StringAnchor.position, StringAnchor.rotation);
-        var rb = gameObject.GetComponent<Rigidbody>();
-        rb.velocity = (Camera.main.transform.rotation * Vector3.forward) * BoltSpeed;
+        var go = Instantiate(BoltPrefab, StringAnchor.position, StringAnchor.rotation);
+        var rb = go.GetComponent<Rigidbody>();
+        go.transform.LookAt(target);
+        rb.velocity = (target - go.transform.position).normalized * BoltSpeed;
     }
 }
