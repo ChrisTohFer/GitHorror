@@ -46,6 +46,12 @@ public class Crossbow : MonoBehaviour
             m_buttonHeld = false;
             AudioSource.Stop();
         }
+        else if(Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            m_buttonHeld = false;
+            AudioSource.Stop();
+            m_pull = 0f;
+        }
     }
 
     private void FixedUpdate()

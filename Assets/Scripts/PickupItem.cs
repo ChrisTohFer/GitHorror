@@ -20,6 +20,7 @@ public class PickupItem : MonoBehaviour
         }
         else if (Name != "" && !PlayerStats.StatMaxed(Name))
         {
+            AudioManager.PlayOnPlayer(AudioManager.AudioClips.PickupItem);
             PlayerStats.ChangeStat(Name, Quantity);
             gameObject.SetActive(false);
             return;
