@@ -4,8 +4,9 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Leafs HighPoly
   m_Shader: {fileID: 4800000, guid: 364ae1069b1778f43b5e632a66bdb48e, type: 3}
   m_ShaderKeywords: _GLOSSYREFLECTIONS_OFF _LEAFTYPE_DEFAULT _SPECULARHIGHLIGHTS_OFF
@@ -92,9 +93,9 @@ Material:
     - _BumpScale: 1
     - _BumpStrength: 1.95
     - _Clip: 0.4
-    - _ColorShifting: 1
+    - _ColorShifting: 0
     - _ColorSource: 1
-    - _ColorVariation: 0.163
+    - _ColorVariation: 0.257
     - _Cull: 2
     - _CullMode: 0
     - _CullModeForward: 2
@@ -139,7 +140,7 @@ Material:
     - _RequireSplitLighting: 0
     - _SSSPower: 2.5
     - _SSSScale: 0.1
-    - _Saturation: 0.94
+    - _Saturation: 0.278
     - _Scale: 2
     - _Smoothness: 0.1176471
     - _Smoothness1: 0
@@ -209,8 +210,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorVariation: {r: 0.5, g: 1, b: 0.50344825, a: 1}
     - _CustomLightColor: {r: 0.6704477, g: 1, b: 0, a: 1}
-    - _DiffusionProfile_asset: {r: -6.315383e-37, g: -7.0622125e-27, b: 4.6171996e-22,
-        a: -8.3853756e-30}
+    - _DiffusionProfile_asset: {r: -6.315383e-37, g: -7.0622125e-27, b: 4.6171996e-22, a: -8.3853756e-30}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
@@ -224,3 +224,4 @@ Material:
     - _TranslucencyTint: {r: 1, g: 1, b: 1, a: 1}
     - _TranslucentColor: {r: 1, g: 1, b: 1, a: 1}
     - _TransmissionTint: {r: 0.2352941, g: 0.3294118, b: 0, a: 1}
+  m_BuildTextureStacks: []

@@ -9965,6 +9965,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge
       objectReference: {fileID: 0}
+    - target: {fileID: 6732291328736793976, guid: 85767b7e4b1ddfe4c84fb1a6f048795f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 23431bae8e4132f40b88a907e32a9f45, type: 2}
     - target: {fileID: 6732291328736793982, guid: 85767b7e4b1ddfe4c84fb1a6f048795f, type: 3}
       propertyPath: m_LocalScale.x
       value: 3
