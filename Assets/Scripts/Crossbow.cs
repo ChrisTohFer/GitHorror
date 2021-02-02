@@ -15,6 +15,7 @@ public class Crossbow : MonoBehaviour
     public float BoltSpeed;
     public float ChargingWalkSpeedModifier = .5f;
     public FirstPersonAIO FP;
+    public AudioSource AudioSource;
 
     Vector3 m_anchorStartPos;
     bool m_buttonHeld = false;
@@ -32,9 +33,19 @@ public class Crossbow : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
             m_buttonHeld = true;
+            var clip = AudioManager.GetAudioClip(AudioManager.AudioClips.CrossbowWindup);
+            AudioSource.Stop();
+            AudioSource.volume = clip.volume;
+            AudioSource.clip = clip.clip;
+            AudioSource.Play();
+        }
         else if(Input.GetKeyUp(KeyCode.Mouse0))
+        {
             m_buttonHeld = false;
+            AudioSource.Stop();
+        }
     }
 
     private void FixedUpdate()
@@ -55,6 +66,7 @@ public class Crossbow : MonoBehaviour
    
             Fire(target);
             PlayerStats.ChangeStat("bolts", -1f);
+            AudioManager.PlayOnPlayer(AudioManager.AudioClips.CrossbowFire);
         }
 
         //Bolt visibility and walk speed

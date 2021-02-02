@@ -21,6 +21,7 @@ public class SlidingDoor : MonoBehaviour
     {
         if (!m_coroutineRunning && !m_open)
         {
+            AudioManager.PlayOnPlayer(AudioManager.AudioClips.DoorOpen);
             m_coroutineRunning = true;
             m_open = true;
             StartCoroutine("COpenSlide");
@@ -30,6 +31,7 @@ public class SlidingDoor : MonoBehaviour
     {
         if (!m_coroutineRunning && m_open)
         {
+            AudioManager.PlayOnPlayer(AudioManager.AudioClips.DoorOpen);
             m_coroutineRunning = true;
             m_open = false;
             StartCoroutine("CCloseSlide");
@@ -46,16 +48,28 @@ public class SlidingDoor : MonoBehaviour
     {
         if (PlayerStats.HasMultipleKeyItems(RequiredKeyItems))
             Open();
+        else
+        {
+            AudioManager.PlayOnPlayer(AudioManager.AudioClips.DoorLocked);
+        }
     }
     public void CloseWithKey()
     {
         if (PlayerStats.HasMultipleKeyItems(RequiredKeyItems))
             Close();
+        else
+        {
+            AudioManager.PlayOnPlayer(AudioManager.AudioClips.DoorLocked);
+        }
     }
     public void ToggleWithKey()
     {
         if (PlayerStats.HasMultipleKeyItems(RequiredKeyItems))
             Toggle();
+        else
+        {
+            AudioManager.PlayOnPlayer(AudioManager.AudioClips.DoorLocked);
+        }
     }
 
     //

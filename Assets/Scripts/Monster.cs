@@ -20,12 +20,14 @@ public class Monster : MonoBehaviour
     public NavMeshAgent Agent;
     public Collider Collider;
     public Animator Animator;
+    public AudioSource AudioSource;
     public float Health = 100f;
     public float AttackDuration;
     public float AttackActivationTime;
     public float AttackRange;
     public float Damage = 10f;
     public float StunDuration;
+    public float IdleSoundProbabilityPerSecond = 0.1f;
 
     //
     Vector3 m_startPosition;
@@ -33,6 +35,7 @@ public class Monster : MonoBehaviour
     float m_stateTimer = 0f;
     Transform playerTransform;
     bool m_attackActivated = false;
+    float m_timeSinceLastIdleSound = 0f;
 
     //
     private void Start()
@@ -43,7 +46,7 @@ public class Monster : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Health <= 0f)
+        if (Health <= 0f && m_state != State.DEAD)
             SetDead();
 
         switch (m_state)
@@ -79,6 +82,11 @@ public class Monster : MonoBehaviour
     //Per-state update methods
     public void UpdateIdle()
     {
+        m_timeSinceLastIdleSound += Time.fixedDeltaTime;
+        if (m_timeSinceLastIdleSound > 4f && Random.value < IdleSoundProbabilityPerSecond * Time.fixedDeltaTime)
+        {
+            AudioManager.Play(AudioManager.AudioClips.EnemyIdle, AudioSource);
+        }
         if (DetectionArea.ContainsPlayer)
         {
             SetChasing();
@@ -157,21 +165,24 @@ public class Monster : MonoBehaviour
     //State transitions
     public void SetIdle()
     {
+        m_timeSinceLastIdleSound = 0f;
         Animator.SetInteger("Animation", 0);
         m_state = State.IDLE;
     }
     public void SetChasing()
     {
         Animator.SetInteger("Animation", 1);
-        m_state = State.CHASING;
         NavMeshPath path = new NavMeshPath();
         if (Agent.CalculatePath(playerTransform.position, path) && path.status == NavMeshPathStatus.PathComplete)
         {
             Agent.SetPath(path);
+            if(m_state != State.HITSTUN && m_state != State.ATTACKING)    //Don't play from hitstun, the sound will play repeatedly
+                AudioManager.Play(AudioManager.AudioClips.EnemySpottedPlayer, AudioSource);
         }
         else
             SetMoving();    //Reset to moving if we can't reach the player (this will be repeatedly called each frame but it's probably fine...)
         
+        m_state = State.CHASING;
     }
     public void SetAttacking()
     {
@@ -180,6 +191,7 @@ public class Monster : MonoBehaviour
         m_stateTimer = AttackDuration;
         Agent.ResetPath();
         m_attackActivated = false;
+        AudioManager.Play(AudioManager.AudioClips.EnemyAttacking, AudioSource);
     }
     public void SetMoving()
     {
@@ -190,8 +202,7 @@ public class Monster : MonoBehaviour
         {
             Agent.SetPath(path);
         }
-        else
-            Agent.ResetPath();
+        Agent.ResetPath();
     }
     public void SetHitstun()
     {
@@ -206,5 +217,6 @@ public class Monster : MonoBehaviour
         m_state = State.DEAD;
         Agent.ResetPath();
         Collider.enabled = false;
+        AudioManager.Play(AudioManager.AudioClips.EnemyDeath, AudioSource);
     }
 }

@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour
     public float CamShakeIntensity = 0.05f;
     public int StartingBolts = 6;
     public int StartingMedKits = 0;
+    public float MedKitHeal = 50f;
 
     private void Awake()
     {
@@ -22,10 +23,30 @@ public class PlayerManager : MonoBehaviour
         PlayerStats.SetStat("medkits", StartingMedKits);
     }
 
+    private void Update()
+    {
+        if(PlayerStats.GetStat("health") == 0f)
+        {
+
+            return;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Q) && PlayerStats.GetStat("medkits") > 0f && PlayerStats.GetStat("health") < 100f)
+        {
+            //Use medkit
+            PlayerStats.ChangeStat("medkits", -1);
+            PlayerStats.ChangeStat("health", MedKitHeal);
+
+            AudioManager.PlayOnPlayer(AudioManager.AudioClips.PlayerHeal);
+        }
+    }
+
     public void TakeDamage(float damage)
     {
         PlayerStats.ChangeStat("health", -damage);
-        if(PlayerStats.GetStat("health") == 0f)
+        AudioManager.PlayOnPlayer(AudioManager.AudioClips.PlayerTakeDamage);
+
+        if (PlayerStats.GetStat("health") == 0f)
         {
             //lose
             PlayerInteraction.enabled = false;

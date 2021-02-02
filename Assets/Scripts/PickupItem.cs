@@ -13,6 +13,7 @@ public class PickupItem : MonoBehaviour
     {
         if (Item != null)
         {
+            AudioManager.PlayOnPlayer(AudioManager.AudioClips.PickupItem);
             PlayerStats.AddKeyItem(Item);
             gameObject.SetActive(false);
             return;

@@ -53,7 +53,7 @@ public static class PlayerStats
         m_stats = new Dictionary<string, PlayerStat>();
         m_stats.Add("health", new PlayerStat(100f, 0f, 100f));
         m_stats.Add("bolts", new PlayerStat(5f, 0f, 100f));
-        m_stats.Add("medkits", new PlayerStat(0f, 0f, 2f));
+        m_stats.Add("medkits", new PlayerStat(0f, 0f, 100f));
 
         m_keyItems = new List<KeyItem>();
     }

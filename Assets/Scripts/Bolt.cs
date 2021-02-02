@@ -32,11 +32,13 @@ public class Bolt : MonoBehaviour
             {
                 Monster monster = collision.gameObject.GetComponentInParent<Monster>();
                 monster.TakeDamage(Damage * HeadShotMultiplier);
+                AudioManager.Play(AudioManager.AudioClips.EnemyHeadshot, monster.AudioSource);
             }
             else
             {
                 Monster monster = collision.gameObject.GetComponent<Monster>();
                 monster.TakeDamage(Damage);
+                AudioManager.Play(AudioManager.AudioClips.EnemyBodyshot, monster.AudioSource);
             }
             Destroy(gameObject);
         }
