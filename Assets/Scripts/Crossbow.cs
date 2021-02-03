@@ -61,7 +61,13 @@ public class Crossbow : MonoBehaviour
         {
             Vector3 target;
             RaycastHit hit;
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f)), out hit, 100000f, ~(LayerMask.GetMask("Player") + LayerMask.GetMask("Field"))))
+            if (
+                Physics.Raycast(
+                    Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f)),
+                    out hit, 100000f,
+                    ~(LayerMask.GetMask("Player") + LayerMask.GetMask("Field") + LayerMask.GetMask("Door"))
+                    )
+                )
             {
                 target = hit.point;
             }
