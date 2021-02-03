@@ -200,9 +200,11 @@ public class Monster : MonoBehaviour
         NavMeshPath path = new NavMeshPath();
         if (Agent.CalculatePath(m_startPosition, path) && path.status == NavMeshPathStatus.PathComplete)
         {
+            Debug.Log(path.status == NavMeshPathStatus.PathComplete);
             Agent.SetPath(path);
         }
-        Agent.ResetPath();
+        else
+            Agent.ResetPath();
     }
     public void SetHitstun()
     {
