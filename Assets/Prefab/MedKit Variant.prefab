@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 386142120103618648, guid: d37593c52ff797541ab0177b47516774, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2757113253650967681, guid: d37593c52ff797541ab0177b47516774, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -51,9 +55,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4233516905482527700, guid: d37593c52ff797541ab0177b47516774, type: 3}
+      propertyPath: m_Size.x
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233516905482527700, guid: d37593c52ff797541ab0177b47516774, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233516905482527700, guid: d37593c52ff797541ab0177b47516774, type: 3}
+      propertyPath: m_Size.z
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233516905482527700, guid: d37593c52ff797541ab0177b47516774, type: 3}
+      propertyPath: m_Center.y
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 4939571022459170796, guid: d37593c52ff797541ab0177b47516774, type: 3}
       propertyPath: m_Name
-      value: MedKit
+      value: MedKit Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6539547167615657403, guid: d37593c52ff797541ab0177b47516774, type: 3}
       propertyPath: Name
@@ -65,3 +85,65 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d37593c52ff797541ab0177b47516774, type: 3}
+--- !u!4 &32698301812184081 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2757113253650967681, guid: d37593c52ff797541ab0177b47516774, type: 3}
+  m_PrefabInstance: {fileID: 2753688439611537552}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5525481065884414626
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 32698301812184081}
+    m_Modifications:
+    - target: {fileID: 6287187229381282152, guid: 18e2383150e32f643bf2f688f8703c5c, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6287187229381282152, guid: 18e2383150e32f643bf2f688f8703c5c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6287187229381282152, guid: 18e2383150e32f643bf2f688f8703c5c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.048
+      objectReference: {fileID: 0}
+    - target: {fileID: 6287187229381282152, guid: 18e2383150e32f643bf2f688f8703c5c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6287187229381282152, guid: 18e2383150e32f643bf2f688f8703c5c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 6287187229381282152, guid: 18e2383150e32f643bf2f688f8703c5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6287187229381282152, guid: 18e2383150e32f643bf2f688f8703c5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6287187229381282152, guid: 18e2383150e32f643bf2f688f8703c5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6287187229381282152, guid: 18e2383150e32f643bf2f688f8703c5c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6287187229381282152, guid: 18e2383150e32f643bf2f688f8703c5c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6287187229381282152, guid: 18e2383150e32f643bf2f688f8703c5c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6632469462519157714, guid: 18e2383150e32f643bf2f688f8703c5c, type: 3}
+      propertyPath: m_Name
+      value: Medkit
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 18e2383150e32f643bf2f688f8703c5c, type: 3}
