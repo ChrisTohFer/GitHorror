@@ -38,6 +38,7 @@ public class PlayerManager : MonoBehaviour
             PlayerStats.ChangeStat("health", MedKitHeal);
 
             AudioManager.PlayOnPlayer(AudioManager.AudioClips.PlayerHeal);
+
         }
     }
 

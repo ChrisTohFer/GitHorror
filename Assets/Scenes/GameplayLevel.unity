@@ -564,6 +564,32 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &7163674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59306422a2ca4454aabce3daa79c3334, type: 3}
+  m_Name: New Aura Base Settings
+  m_EditorClassIdentifier: 
+  useDensity: 1
+  density: 0.25
+  useScattering: 1
+  scattering: 0.5
+  useAmbientLighting: 1
+  ambientLightingStrength: 1
+  useColor: 0
+  color: {r: 0, g: 0.5, b: 0.5, a: 0.5}
+  colorStrength: 1
+  useTint: 0
+  tint: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  tintStrength: 1
+  useExtinction: 0
+  extinction: 0.75
 --- !u!43 &13027322
 Mesh:
   m_ObjectHideFlags: 0
@@ -34567,6 +34593,22 @@ PrefabInstance:
       propertyPath: frustumSettings.qualitySettings
       value: 
       objectReference: {fileID: 1412787223}
+    - target: {fileID: 1743904051284939, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: aimingFov
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743904051284939, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: defaultFov
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743904051284939, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1370221566}
+    - target: {fileID: 4917696800910542029, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 4931645865086761579, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
       propertyPath: m_Name
       value: Player
@@ -34615,8 +34657,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5036074565814408877, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: fOVToMouseSensitivity
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+--- !u!20 &1370221566 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4917696800910542029, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+  m_PrefabInstance: {fileID: 1370221565}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1389309602
 Mesh:
   m_ObjectHideFlags: 0
@@ -44063,32 +44114,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!114 &1761471382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59306422a2ca4454aabce3daa79c3334, type: 3}
-  m_Name: New Aura Base Settings
-  m_EditorClassIdentifier: 
-  useDensity: 1
-  density: 0.25
-  useScattering: 1
-  scattering: 0.5
-  useAmbientLighting: 1
-  ambientLightingStrength: 1
-  useColor: 0
-  color: {r: 0, g: 0.5, b: 0.5, a: 0.5}
-  colorStrength: 1
-  useTint: 0
-  tint: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  tintStrength: 1
-  useExtinction: 0
-  extinction: 0.75
 --- !u!43 &1764506761
 Mesh:
   m_ObjectHideFlags: 0

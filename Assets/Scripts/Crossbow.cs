@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Crossbow : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class Crossbow : MonoBehaviour
     public float ChargingWalkSpeedModifier = .5f;
     public FirstPersonAIO FP;
     public AudioSource AudioSource;
+    public Camera playerCamera;
+    public float defaultFov, aimingFov;
+    private bool bowReset = false;
 
     Vector3 m_anchorStartPos;
     bool m_buttonHeld = false;
@@ -40,18 +44,45 @@ public class Crossbow : MonoBehaviour
             AudioSource.volume = clip.volume;
             AudioSource.clip = clip.clip;
             AudioSource.Play();
+            bowReset = false;
         }
         else if(Input.GetKeyUp(KeyCode.Mouse0))
         {
             m_buttonHeld = false;
             AudioSource.Stop();
+
+            //ResetFov
+            playerCamera.DOKill();
+            playerCamera.DOFieldOfView(defaultFov, DrawTime/2);
         }
         else if(Input.GetKeyDown(KeyCode.Mouse1))
         {
             m_buttonHeld = false;
             AudioSource.Stop();
             m_pull = 0f;
+
+            //ResetFov
+            playerCamera.DOKill();
+            playerCamera.DOFieldOfView(defaultFov, DrawTime/2);
+            bowReset = true;
         }
+
+        if(Input.GetKey(KeyCode.Mouse0))
+        {
+            if (!bowReset)
+            {
+                //Change FOV
+                playerCamera.DOKill();
+                playerCamera.DOFieldOfView(aimingFov, DrawTime);
+            }
+            else
+            {
+                //ResetFov
+                playerCamera.DOKill();
+                playerCamera.DOFieldOfView(defaultFov, DrawTime/2);
+            }
+        }
+
     }
 
     private void FixedUpdate()
