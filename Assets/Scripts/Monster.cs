@@ -21,6 +21,7 @@ public class Monster : MonoBehaviour
     public Collider Collider;
     public Animator Animator;
     public AudioSource AudioSource;
+    public GameObject AttackIndicator;
     public float Health = 100f;
     public float AttackDuration;
     public float AttackActivationTime;
@@ -168,6 +169,7 @@ public class Monster : MonoBehaviour
         m_timeSinceLastIdleSound = 0f;
         Animator.SetInteger("Animation", 0);
         m_state = State.IDLE;
+        AttackIndicator.SetActive(false);
     }
     public void SetChasing()
     {
@@ -180,9 +182,13 @@ public class Monster : MonoBehaviour
                 AudioManager.Play(AudioManager.AudioClips.EnemySpottedPlayer, AudioSource);
         }
         else
+        {
             SetMoving();    //Reset to moving if we can't reach the player (this will be repeatedly called each frame but it's probably fine...)
+            return;
+        }
         
         m_state = State.CHASING;
+        AttackIndicator.SetActive(false);
     }
     public void SetAttacking()
     {
@@ -192,6 +198,7 @@ public class Monster : MonoBehaviour
         Agent.ResetPath();
         m_attackActivated = false;
         AudioManager.Play(AudioManager.AudioClips.EnemyAttacking, AudioSource);
+        AttackIndicator.SetActive(true);
     }
     public void SetMoving()
     {
@@ -200,11 +207,11 @@ public class Monster : MonoBehaviour
         NavMeshPath path = new NavMeshPath();
         if (Agent.CalculatePath(m_startPosition, path) && path.status == NavMeshPathStatus.PathComplete)
         {
-            Debug.Log(path.status == NavMeshPathStatus.PathComplete);
             Agent.SetPath(path);
         }
         else
             Agent.ResetPath();
+        AttackIndicator.SetActive(false);
     }
     public void SetHitstun()
     {
@@ -212,6 +219,7 @@ public class Monster : MonoBehaviour
         m_state = State.HITSTUN;
         m_stateTimer = StunDuration;
         Agent.ResetPath();
+        AttackIndicator.SetActive(false);
     }
     public void SetDead()
     {
@@ -220,5 +228,6 @@ public class Monster : MonoBehaviour
         Agent.ResetPath();
         Collider.enabled = false;
         AudioManager.Play(AudioManager.AudioClips.EnemyDeath, AudioSource);
+        AttackIndicator.SetActive(false);
     }
 }

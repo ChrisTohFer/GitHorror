@@ -142,6 +142,7 @@ public class PlayerManager : MonoBehaviour
             PlayerInteraction.enabled = false;
             Crossbow.enabled = false;
             FP.enabled = false;
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
         else
         {
