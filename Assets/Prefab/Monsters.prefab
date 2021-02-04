@@ -317,6 +317,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2582497170742969399}
     m_Modifications:
+    - target: {fileID: 7091253409239450737, guid: fc016804ed4aa224e9304cfdc7adad17, type: 3}
+      propertyPath: TrailModule.ratio
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091253409239450737, guid: fc016804ed4aa224e9304cfdc7adad17, type: 3}
+      propertyPath: TrailModule.sizeAffectsWidth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091253409239450737, guid: fc016804ed4aa224e9304cfdc7adad17, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091253409239450737, guid: fc016804ed4aa224e9304cfdc7adad17, type: 3}
+      propertyPath: TrailModule.widthOverTrail.scalar
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091253409239450737, guid: fc016804ed4aa224e9304cfdc7adad17, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091253409239450737, guid: fc016804ed4aa224e9304cfdc7adad17, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091253409239450737, guid: fc016804ed4aa224e9304cfdc7adad17, type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091253409239450750, guid: fc016804ed4aa224e9304cfdc7adad17, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.034
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091253409239450750, guid: fc016804ed4aa224e9304cfdc7adad17, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.019
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091253409239450750, guid: fc016804ed4aa224e9304cfdc7adad17, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.574
+      objectReference: {fileID: 0}
     - target: {fileID: 7091253409322375256, guid: fc016804ed4aa224e9304cfdc7adad17, type: 3}
       propertyPath: m_RootOrder
       value: 2
