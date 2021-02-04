@@ -26,6 +26,11 @@ public class PlayerManager : MonoBehaviour
     public GameObject UI_Kit5;
 
     public TextMeshProUGUI UI_Bolts;
+
+    public GameObject UI_KeyA;
+    public GameObject UI_Keya;
+    public GameObject UI_KeyB;
+    public GameObject UI_Keyb;
     // Law Code (End)
 
     private void Awake()
@@ -135,8 +140,29 @@ public class PlayerManager : MonoBehaviour
             UI_Health.color = new Color32(102, 204, 0, 255);
         }
 
-        //Health UI
+        //Bolts UI
         UI_Bolts.SetText("BOLTS " + PlayerStats.GetStat("bolts"));
+
+        //Keys UI
+        if (PlayerStats.HasKeyItem("MajorA"))
+        {
+            UI_KeyA.SetActive(true);
+        }
+
+        if (PlayerStats.HasKeyItem("MinorA"))
+        {
+            UI_Keya.SetActive(true);
+        }
+
+        if (PlayerStats.HasKeyItem("MajorB"))
+        {
+            UI_KeyB.SetActive(true);
+        }
+
+        if (PlayerStats.HasKeyItem("MinorB"))
+        {
+            UI_Keyb.SetActive(true);
+        }
 
         // Law Code (End)
     }

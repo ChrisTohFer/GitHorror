@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e3c1094a8ad6447b681152016bd027, type: 3}
   m_Name: MajorB
   m_EditorClassIdentifier: 
-  Name: redkey
+  Name: MajorB
   Image: {fileID: 0}
