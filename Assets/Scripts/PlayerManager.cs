@@ -24,6 +24,8 @@ public class PlayerManager : MonoBehaviour
     public GameObject UI_Kit3;
     public GameObject UI_Kit4;
     public GameObject UI_Kit5;
+
+    public TextMeshProUGUI UI_Bolts;
     // Law Code (End)
 
     private void Awake()
@@ -109,25 +111,33 @@ public class PlayerManager : MonoBehaviour
         }
 
         //Health UI
-        if (PlayerStats.GetStat("health") == 0f)
+        if (PlayerStats.GetStat("health") <= 0f)
         {
             UI_Health.SetText("DEAD");
+            UI_Health.color = new Color32(102, 0, 0, 255);
         }
 
         if (PlayerStats.GetStat("health") > 0f && PlayerStats.GetStat("health") <= 30f)
         {
             UI_Health.SetText("DANGER");
+            UI_Health.color = new Color32(204, 0, 0, 255);
         }
 
         if (PlayerStats.GetStat("health") > 30f && PlayerStats.GetStat("health") <= 70f)
         {
             UI_Health.SetText("CAUTION");
+            UI_Health.color = new Color32(204, 102, 0, 255);
         }
 
         if (PlayerStats.GetStat("health") > 70f && PlayerStats.GetStat("health") <= 100f)
         {
             UI_Health.SetText("FINE");
+            UI_Health.color = new Color32(102, 204, 0, 255);
         }
+
+        //Health UI
+        UI_Bolts.SetText("BOLTS " + PlayerStats.GetStat("bolts"));
+
         // Law Code (End)
     }
 

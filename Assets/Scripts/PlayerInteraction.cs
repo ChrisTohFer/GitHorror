@@ -11,6 +11,10 @@ public class PlayerInteraction : MonoBehaviour
     //
     Interactable m_interactTarget;
 
+    // Law Code (Start)
+    public GameObject UI_Hand;
+    // Law Code (End)
+
     private void Update()
     {
         UpdateInteractableTarget();
@@ -32,17 +36,25 @@ public class PlayerInteraction : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f)), out hit, InteractionRange, ~(LayerMask.GetMask("Player") + LayerMask.GetMask("Field"))))
         {
+            
+
             //Note that this might still be null if the target is non-interactable
             m_interactTarget = hit.transform.GetComponent<Interactable>();
             if (oldInteractTarget != null && oldInteractTarget != m_interactTarget)
                 oldInteractTarget.HighlightActive(false);
             if (m_interactTarget != null)
+            {
                 m_interactTarget.HighlightActive(true);
+                UI_Hand.SetActive(true); // Law Code
+            }
+                
         }
         else
         {
             //We didn't hit anything in range
             m_interactTarget = null;
+
+            UI_Hand.SetActive(false); // Law Code
 
             if (oldInteractTarget != null && oldInteractTarget != m_interactTarget)
                 oldInteractTarget.HighlightActive(false);
