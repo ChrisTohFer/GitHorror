@@ -59,6 +59,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4233516905482527700, guid: d37593c52ff797541ab0177b47516774, type: 3}
+      propertyPath: m_Size.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233516905482527700, guid: d37593c52ff797541ab0177b47516774, type: 3}
+      propertyPath: m_Center.y
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 4939571022459170796, guid: d37593c52ff797541ab0177b47516774, type: 3}
       propertyPath: m_Name
       value: Bolts Variant
