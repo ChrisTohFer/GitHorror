@@ -66,6 +66,15 @@ public static class PlayerStats
     {
         return m_stats[name].Value() == m_stats[name].MaxValue();
     }
+    public static bool HasKeyItem(string requiredName)
+    {
+        foreach (KeyItem item in m_keyItems)
+        {
+            if (item.name == requiredName)
+                return true;
+        }
+        return false;
+    }
     public static bool HasKeyItem(KeyItem requiredItem)
     {
         foreach(KeyItem item in m_keyItems)
