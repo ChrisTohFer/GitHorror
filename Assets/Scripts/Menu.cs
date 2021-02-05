@@ -7,7 +7,8 @@ public class Menu : MonoBehaviour
 {
     // the image you want to fade, assign in inspector
     public Image fadePanel;
-    public float fadeTime = 5f;
+    public float fadeTimeIn = 3f;
+    public float fadeTimeOut = 2f;
     private bool keyPressed = false;
     public AudioSource startSound;
     public GameObject menu;
@@ -19,14 +20,14 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKey && keyPressed == false)
+        if (Input.GetKeyDown(KeyCode.Return) && keyPressed == false)
         {
             keyPressed = true;
             startSound.Play();
             StartCoroutine(FadeImage());
         }
 
-        if (Input.GetKeyDown("escape") && keyPressed == true)
+        if (Input.GetKeyDown(KeyCode.Escape) && keyPressed == true)
         {
             Application.Quit();
         }
@@ -34,20 +35,20 @@ public class Menu : MonoBehaviour
 
     IEnumerator FadeImage()
     {
-        for (float i = 0; i <= fadeTime; i += Time.deltaTime)
+        for (float i = 0; i <= fadeTimeIn; i += Time.deltaTime)
         {
             // set color with i as alpha
-            fadePanel.color = new Color(0, 0, 0, (i/fadeTime));
+            fadePanel.color = new Color(0, 0, 0, (i/ fadeTimeIn));
             yield return null;
         }
 
         menu.SetActive(false);
         music.SetActive(true);
 
-        for (float i = fadeTime; i >= 0; i -= Time.deltaTime)
+        for (float i = fadeTimeOut; i >= 0; i -= Time.deltaTime)
         {
             // set color with i as alpha
-            fadePanel.color = new Color(0, 0, 0, (i/fadeTime));
+            fadePanel.color = new Color(0, 0, 0, (i/ fadeTimeOut));
             yield return null;
         }
 

@@ -556,7 +556,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 911ade5e7fc79b94fbe6eef5b9546d27, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -686,7 +686,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &711882360
 Transform:
   m_ObjectHideFlags: 0
@@ -708,7 +708,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 711882359}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3691160c4cb43194aa42dd2e0b0a30a5, type: 3}
@@ -1579,7 +1579,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press Any Key To Start
+  m_text: Press Enter To Start
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 538731764affe844ead086298fba2f12, type: 2}
   m_sharedMaterial: {fileID: 8892529726086822800, guid: 538731764affe844ead086298fba2f12, type: 2}
