@@ -38363,6 +38363,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3789254, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3789255, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3789255, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1782297714, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
       propertyPath: frustumSettings.baseSettings
       value: 
@@ -38379,6 +38391,14 @@ PrefabInstance:
       propertyPath: frustumSettings.qualitySettings
       value: 
       objectReference: {fileID: 1412787223}
+    - target: {fileID: 1232746571680057699, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3641700634255809744, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: m_Name
+      value: HealthUIExtra
+      objectReference: {fileID: 0}
     - target: {fileID: 4931645865086761579, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
       propertyPath: m_Name
       value: Player
