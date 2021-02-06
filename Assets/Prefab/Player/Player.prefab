@@ -3092,6 +3092,7 @@ MonoBehaviour:
   weaponCamera: {fileID: 1782297715}
   defaultFov: 60
   aimingFov: 40
+  MinimumFireCharge: 0.5
 --- !u!114 &212230590794768649
 MonoBehaviour:
   m_ObjectHideFlags: 0

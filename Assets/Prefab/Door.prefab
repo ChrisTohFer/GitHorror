@@ -362,7 +362,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6732291328736793957}
         m_TargetAssemblyTypeName: SlidingDoor, Assembly-CSharp
-        m_MethodName: ToggleWithKey
+        m_MethodName: OpenWithKey
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

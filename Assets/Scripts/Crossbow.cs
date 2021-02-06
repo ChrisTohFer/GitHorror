@@ -19,10 +19,12 @@ public class Crossbow : MonoBehaviour
     public AudioSource AudioSource;
     public Camera playerCamera, weaponCamera;
     public float defaultFov, aimingFov;
-    private bool bowReset = false;
+    public float MinimumFireCharge = .75f;
 
+    private bool bowReset = false;
     Vector3 m_anchorStartPos;
     bool m_buttonHeld = false;
+    bool m_buttonReleased = false;
     float m_pull = 0f;
     float m_normalWalkSpeed;
     float m_normalSprintSpeed;
@@ -49,6 +51,7 @@ public class Crossbow : MonoBehaviour
         else if(Input.GetKeyUp(KeyCode.Mouse0))
         {
             m_buttonHeld = false;
+            m_buttonReleased = true;
             AudioSource.Stop();
 
             //ResetFov
@@ -96,7 +99,7 @@ public class Crossbow : MonoBehaviour
     private void FixedUpdate()
     {
         //Fire
-        if (m_pull == 1f && m_buttonHeld == false && PlayerStats.GetStat("bolts") > 0f)
+        if (m_pull >= MinimumFireCharge && m_buttonReleased == true && PlayerStats.GetStat("bolts") > 0f)
         {
             Vector3 target;
             RaycastHit hit;
@@ -142,6 +145,8 @@ public class Crossbow : MonoBehaviour
         //Spin the crank
         if (m_buttonHeld && m_pull < 1f)
             Crank.eulerAngles = new Vector3(Crank.eulerAngles.x, Crank.eulerAngles.y, Crank.eulerAngles.z + Time.fixedDeltaTime * CrankSpinSpeed);
+
+        m_buttonReleased = false;
     }
 
     void StringPosition(float pull)
@@ -152,7 +157,9 @@ public class Crossbow : MonoBehaviour
     {
         var go = Instantiate(BoltPrefab, StringAnchor.position, StringAnchor.rotation);
         var rb = go.GetComponent<Rigidbody>();
+        var bolt = go.GetComponent<Bolt>();
         go.transform.LookAt(target);
         rb.velocity = (target - go.transform.position).normalized * BoltSpeed;
+        bolt.Damage *= m_pull;
     }
 }

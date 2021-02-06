@@ -29,6 +29,7 @@ public class Monster : MonoBehaviour
     public float Damage = 10f;
     public float StunDuration;
     public float IdleSoundProbabilityPerSecond = 0.1f;
+    public float DeathTime = 2f;
 
     //
     Vector3 m_startPosition;
@@ -160,7 +161,9 @@ public class Monster : MonoBehaviour
     }
     public void UpdateDead()
     {
-        //Do nothing
+        transform.localScale = transform.localScale - Vector3.one * (Time.fixedDeltaTime / DeathTime);
+        if (transform.localScale.x <= 0f)
+            Destroy(gameObject);
     }
 
     //State transitions
