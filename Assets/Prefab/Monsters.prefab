@@ -246,6 +246,7 @@ MonoBehaviour:
   DetectionArea: {fileID: 444667765608208128}
   Agent: {fileID: 3053647457273684623}
   Collider: {fileID: 8060777485590667681}
+  HeadCollider: {fileID: 4358590290157398843}
   Animator: {fileID: 4786183809741591778}
   AudioSource: {fileID: 6675933090393520875}
   AttackIndicator: {fileID: 3388072514240295237}

@@ -7,6 +7,7 @@ public class SlidingDoor : MonoBehaviour
     public Vector3 OpenOffset = new Vector3(0f, 3f, 0f);
     public float OpenTime = 1f;
     public KeyItem[] RequiredKeyItems;
+    public Collider InteractionCollider;
 
     bool m_open = false;
     Vector3 ClosedPosition;
@@ -44,10 +45,14 @@ public class SlidingDoor : MonoBehaviour
         else
             Open();
     }
-    public void OpenWithKey()
+    public void OpenWithKey(bool removeCollider)
     {
         if (PlayerStats.HasMultipleKeyItems(RequiredKeyItems))
+        {
             Open();
+            if (removeCollider)
+                InteractionCollider.enabled = false;
+        }
         else
         {
             AudioManager.PlayOnPlayer(AudioManager.AudioClips.DoorLocked);
