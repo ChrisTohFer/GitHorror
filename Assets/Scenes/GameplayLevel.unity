@@ -46241,6 +46241,58 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3789254, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204678030, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.b
+      value: 0.58431375
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204678030, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.g
+      value: 0.30267403
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204678030, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: m_fontColorGradient.topLeft.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204678030, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: m_fontColorGradient.topRight.b
+      value: 0.58431375
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204678030, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: m_fontColorGradient.topRight.g
+      value: 0.30267403
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204678030, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: m_fontColorGradient.topRight.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204678030, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.b
+      value: 0.5377358
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204678030, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.g
+      value: 0.5377358
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204678030, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: m_fontColorGradient.bottomLeft.r
+      value: 0.5377358
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204678030, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.b
+      value: 0.5377358
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204678030, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.g
+      value: 0.5377358
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204678030, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
+      propertyPath: m_fontColorGradient.bottomRight.r
+      value: 0.5377358
+      objectReference: {fileID: 0}
     - target: {fileID: 1782297714, guid: 851d35a54bab6954dab4cad8e2403733, type: 3}
       propertyPath: frustumSettings.baseSettings
       value: 
