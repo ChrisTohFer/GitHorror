@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Menu : MonoBehaviour
     public float fadeTimeOut = 2f;
     private bool keyPressed = false;
     public AudioSource startSound;
+    public AudioSource dreadhouseSound;
     public GameObject menu;
     public GameObject music;
 
@@ -24,7 +26,13 @@ public class Menu : MonoBehaviour
         {
             keyPressed = true;
             startSound.Play();
+            dreadhouseSound.Play();
             StartCoroutine(FadeImage());
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return) && PlayerStats.GetStat("health") <= 0f && keyPressed == true)
+        {
+            SceneManager.LoadScene("GameplayLevel", LoadSceneMode.Single);
         }
 
         if (Input.GetKeyDown(KeyCode.Escape) && keyPressed == true)
