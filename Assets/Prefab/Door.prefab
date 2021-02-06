@@ -363,14 +363,14 @@ MonoBehaviour:
       - m_Target: {fileID: 6732291328736793957}
         m_TargetAssemblyTypeName: SlidingDoor, Assembly-CSharp
         m_MethodName: OpenWithKey
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   Hightlight: {fileID: 0}
 --- !u!65 &6732291328047941540
@@ -499,6 +499,7 @@ MonoBehaviour:
   OpenOffset: {x: 0, y: 4, z: 0}
   OpenTime: 1
   RequiredKeyItems: []
+  InteractionCollider: {fileID: 6732291328047941540}
 --- !u!208 &6732291328736793956
 NavMeshObstacle:
   m_ObjectHideFlags: 0

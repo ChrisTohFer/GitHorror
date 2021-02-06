@@ -45,7 +45,6 @@ public class PlayerInteraction : MonoBehaviour
             if (m_interactTarget != null)
             {
                 m_interactTarget.HighlightActive(true);
-                UI_Hand.SetActive(true); // Law Code
             }
                 
         }
@@ -54,11 +53,10 @@ public class PlayerInteraction : MonoBehaviour
             //We didn't hit anything in range
             m_interactTarget = null;
 
-            UI_Hand.SetActive(false); // Law Code
-
             if (oldInteractTarget != null && oldInteractTarget != m_interactTarget)
                 oldInteractTarget.HighlightActive(false);
         }
 
+        UI_Hand.SetActive(m_interactTarget != null);
     }
 }
