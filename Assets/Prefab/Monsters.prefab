@@ -256,6 +256,7 @@ MonoBehaviour:
   Damage: 10
   StunDuration: 1
   IdleSoundProbabilityPerSecond: 0.1
+  ShrinkPerSecond: {x: 0.6, y: 0.3, z: 0.6}
 --- !u!195 &3053647457273684623
 NavMeshAgent:
   m_ObjectHideFlags: 0

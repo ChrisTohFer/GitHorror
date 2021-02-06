@@ -29,7 +29,7 @@ public class Monster : MonoBehaviour
     public float Damage = 10f;
     public float StunDuration;
     public float IdleSoundProbabilityPerSecond = 0.1f;
-    public float DeathTime = 2f;
+    public Vector3 ShrinkPerSecond = Vector3.one / 2f;
 
     //
     Vector3 m_startPosition;
@@ -161,8 +161,8 @@ public class Monster : MonoBehaviour
     }
     public void UpdateDead()
     {
-        transform.localScale = transform.localScale - Vector3.one * (Time.fixedDeltaTime / DeathTime);
-        if (transform.localScale.x <= 0f)
+        transform.localScale = transform.localScale - ShrinkPerSecond * Time.fixedDeltaTime;
+        if (transform.localScale.x <= 0f || transform.localScale.y <= 0f || transform.localScale.x <= 0f)
             Destroy(gameObject);
     }
 
