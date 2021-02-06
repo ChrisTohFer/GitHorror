@@ -19,6 +19,7 @@ public class Monster : MonoBehaviour
     public DetectionArea DetectionArea;
     public NavMeshAgent Agent;
     public Collider Collider;
+    public Collider HeadCollider;
     public Animator Animator;
     public AudioSource AudioSource;
     public GameObject AttackIndicator;
@@ -230,6 +231,7 @@ public class Monster : MonoBehaviour
         m_state = State.DEAD;
         Agent.ResetPath();
         Collider.enabled = false;
+        HeadCollider.enabled = false;
         AudioManager.Play(AudioManager.AudioClips.EnemyDeath, AudioSource);
         AttackIndicator.SetActive(false);
     }

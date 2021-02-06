@@ -31,6 +31,8 @@ public class PlayerManager : MonoBehaviour
     public GameObject UI_Keya;
     public GameObject UI_KeyB;
     public GameObject UI_Keyb;
+
+    public GameObject deathUI;
     // Law Code (End)
 
     Color GreenColor = new Color(0, 0.6784314f, 0.2948871f);
@@ -121,13 +123,6 @@ public class PlayerManager : MonoBehaviour
         }
 
         //Health UI
-        if (PlayerStats.GetStat("health") <= 0f)
-        {
-            UI_Health.SetText("DEAD");
-            UI_Health.colorGradient = new VertexGradient(RedColor, RedColor, RedColor, RedColor);
-            //UI_Health.color = new Color32(102, 0, 0, 255);
-        }
-
         if (PlayerStats.GetStat("health") > 0f && PlayerStats.GetStat("health") <= 30f)
         {
             UI_Health.SetText("DANGER");
@@ -188,6 +183,10 @@ public class PlayerManager : MonoBehaviour
             Crossbow.enabled = false;
             FP.enabled = false;
             GetComponent<Rigidbody>().velocity = Vector3.zero;
+            //Law Code
+            UI_Health.SetText("DEAD");
+            UI_Health.colorGradient = new VertexGradient(RedColor, RedColor, RedColor, RedColor);
+            deathUI.SetActive(true);
         }
         else
         {
