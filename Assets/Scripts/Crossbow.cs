@@ -17,7 +17,7 @@ public class Crossbow : MonoBehaviour
     public float ChargingWalkSpeedModifier = .5f;
     public FirstPersonAIO FP;
     public AudioSource AudioSource;
-    public Camera playerCamera;
+    public Camera playerCamera, weaponCamera;
     public float defaultFov, aimingFov;
     private bool bowReset = false;
 
@@ -52,7 +52,9 @@ public class Crossbow : MonoBehaviour
             AudioSource.Stop();
 
             //ResetFov
+            weaponCamera.DOKill();
             playerCamera.DOKill();
+            weaponCamera.DOFieldOfView(defaultFov, DrawTime/2);
             playerCamera.DOFieldOfView(defaultFov, DrawTime/2);
         }
         else if(Input.GetKeyDown(KeyCode.Mouse1))
@@ -62,7 +64,9 @@ public class Crossbow : MonoBehaviour
             m_pull = 0f;
 
             //ResetFov
+            weaponCamera.DOKill();
             playerCamera.DOKill();
+            weaponCamera.DOFieldOfView(defaultFov, DrawTime/2);
             playerCamera.DOFieldOfView(defaultFov, DrawTime/2);
             bowReset = true;
         }
@@ -72,14 +76,18 @@ public class Crossbow : MonoBehaviour
             if (!bowReset)
             {
                 //Change FOV
-                playerCamera.DOKill();
+                //playerCamera.DOKill();
+                //weaponCamera.DOKill();
+                weaponCamera.DOFieldOfView(aimingFov, DrawTime);
                 playerCamera.DOFieldOfView(aimingFov, DrawTime);
             }
             else
             {
                 //ResetFov
                 playerCamera.DOKill();
+                weaponCamera.DOKill();
                 playerCamera.DOFieldOfView(defaultFov, DrawTime/2);
+                weaponCamera.DOFieldOfView(defaultFov, DrawTime/2);
             }
         }
 

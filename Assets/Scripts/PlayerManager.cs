@@ -33,6 +33,11 @@ public class PlayerManager : MonoBehaviour
     public GameObject UI_Keyb;
     // Law Code (End)
 
+    Color GreenColor = new Color(0, 0.6784314f, 0.2948871f);
+    Color WhiteColor = new Color(1, 1, 1);
+    Color RedColor = new Color(0.6226415f, 0, 0);
+    Color OrangeColor = new Color(0.6784314f, 0.4082189f, 0); 
+
     private void Awake()
     {
         Singleton = this;
@@ -119,25 +124,29 @@ public class PlayerManager : MonoBehaviour
         if (PlayerStats.GetStat("health") <= 0f)
         {
             UI_Health.SetText("DEAD");
-            UI_Health.color = new Color32(102, 0, 0, 255);
+            UI_Health.colorGradient = new VertexGradient(RedColor, RedColor, RedColor, RedColor);
+            //UI_Health.color = new Color32(102, 0, 0, 255);
         }
 
         if (PlayerStats.GetStat("health") > 0f && PlayerStats.GetStat("health") <= 30f)
         {
             UI_Health.SetText("DANGER");
-            UI_Health.color = new Color32(204, 0, 0, 255);
+            UI_Health.colorGradient = new VertexGradient(RedColor, RedColor, WhiteColor, WhiteColor);
+           // UI_Health.color = new Color32(204, 0, 0, 255);
         }
 
         if (PlayerStats.GetStat("health") > 30f && PlayerStats.GetStat("health") <= 70f)
         {
             UI_Health.SetText("CAUTION");
-            UI_Health.color = new Color32(204, 102, 0, 255);
+            UI_Health.colorGradient = new VertexGradient(OrangeColor, OrangeColor, WhiteColor, WhiteColor);
+            //UI_Health.color = new Color32(204, 102, 0, 255);
         }
 
         if (PlayerStats.GetStat("health") > 70f && PlayerStats.GetStat("health") <= 100f)
         {
             UI_Health.SetText("FINE");
-            UI_Health.color = new Color32(102, 204, 0, 255);
+            UI_Health.colorGradient = new VertexGradient(GreenColor, GreenColor, WhiteColor, WhiteColor);
+           // UI_Health.color = new Color32(102, 204, 0, 255);
         }
 
         //Bolts UI
