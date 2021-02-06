@@ -150,7 +150,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         //Bolts UI
-        UI_Bolts.SetText("BOLTS: " + PlayerStats.GetStat("bolts"));
+        UI_Bolts.SetText("AMMO- " + PlayerStats.GetStat("bolts"));
 
         //Keys UI
         if (PlayerStats.HasKeyItem("MajorA"))
