@@ -9,6 +9,7 @@ public class EndGame : MonoBehaviour
     public Image fadePanel;
     public float fadeTime = 3f;
     public AudioSource music;
+    public AudioSource end;
     private float storedVolume;
 
     private void Start()
@@ -21,6 +22,7 @@ public class EndGame : MonoBehaviour
         if(other.tag == "Player")
         {
             StartCoroutine(GameEnd());
+            end.Play();
         }
     }
 
@@ -29,8 +31,8 @@ public class EndGame : MonoBehaviour
         for (float i = 0; i <= fadeTime; i += Time.deltaTime)
         {
             // set color with i as alpha
-            fadePanel.color = new Color(0, 0, 0, (i / fadeTime));
-            music.volume = (storedVolume - ((i/fadeTime)*storedVolume));
+            fadePanel.color = new Color(0, 0, 0, ((i) / fadeTime)*3);
+            music.volume = (storedVolume - ((i/fadeTime)*storedVolume)*3);
             yield return null;
         }
         SceneManager.LoadScene("GameplayLevel", LoadSceneMode.Single);
