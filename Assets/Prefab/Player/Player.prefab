@@ -1464,10 +1464,10 @@ MonoBehaviour:
   m_enableVertexGradient: 1
   m_colorMode: 2
   m_fontColorGradient:
-    topLeft: {r: 0, g: 0.36615303, b: 0.6509434, a: 1}
-    topRight: {r: 0, g: 0.36615303, b: 0.6509434, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+    topLeft: {r: 0, g: 0.30267403, b: 0.58431375, a: 1}
+    topRight: {r: 0, g: 0.30267403, b: 0.58431375, a: 1}
+    bottomLeft: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
+    bottomRight: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -1889,7 +1889,7 @@ MonoBehaviour:
   m_colorMode: 2
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 0, g: 0.36615303, b: 0.6509434, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
@@ -2724,13 +2724,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964473753632236270}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.2}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3427,6 +3427,8 @@ MonoBehaviour:
   UI_KeyB: {fileID: 7567203650128482987}
   UI_Keyb: {fileID: 615618354386650408}
   deathUI: {fileID: 964473753632236270}
+  redPanel: {fileID: 7564485414052205053}
+  volume: {fileID: 6369390737093615549}
 --- !u!1 &4932154596607295259
 GameObject:
   m_ObjectHideFlags: 0

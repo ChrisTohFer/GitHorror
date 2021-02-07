@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using UnityEngine.Rendering.PostProcessing;
+
 
 public class PlayerManager : MonoBehaviour
 {
@@ -33,6 +36,11 @@ public class PlayerManager : MonoBehaviour
     public GameObject UI_Keyb;
 
     public GameObject deathUI;
+
+    public Image redPanel;
+
+    public PostProcessVolume volume;
+    private Vignette vignette;
     // Law Code (End)
 
     Color GreenColor = new Color(0, 0.6784314f, 0.2948871f);
@@ -46,6 +54,7 @@ public class PlayerManager : MonoBehaviour
         PlayerStats.Reset();
         PlayerStats.SetStat("bolts", StartingBolts);
         PlayerStats.SetStat("medkits", StartingMedKits);
+        volume.profile.TryGetSettings(out vignette);
     }
 
     private void Update()
@@ -63,6 +72,9 @@ public class PlayerManager : MonoBehaviour
             PlayerStats.ChangeStat("health", MedKitHeal);
 
             AudioManager.PlayOnPlayer(AudioManager.AudioClips.PlayerHeal);
+
+            vignette.color.value = new Color(0, 1, 0, 0);
+            StartCoroutine("FadeInGreenVignette");
 
         }
 
@@ -187,10 +199,59 @@ public class PlayerManager : MonoBehaviour
             UI_Health.SetText("DEAD");
             UI_Health.colorGradient = new VertexGradient(RedColor, RedColor, RedColor, RedColor);
             deathUI.SetActive(true);
+            StartCoroutine("FadeInRed");
+            //
         }
         else
         {
             StartCoroutine(FP.CameraShake(CamShakeTime, CamShakeIntensity));
+            //Law Code
+            vignette.color.value = new Color(1, 0, 0, 0);
+            StartCoroutine("FadeVignette");
+            //
+        }
+    }
+
+    IEnumerator FadeInRed()
+    {
+        for (float i = 0; i <= 2; i += Time.deltaTime)
+        {
+            redPanel.color = new Color(1, 0, 0, (0.1f*i));
+            yield return null;
+        }
+    }
+
+    IEnumerator FadeInGreenVignette()
+    {
+        for (float i = 0; i <= 0.1f; i += Time.deltaTime)
+        {
+            // set color with i as alpha
+            vignette.intensity.value = ((0.3f/0.1f) * i);
+            yield return null;
+        }
+
+        for (float i = 0.6f; i >= 0; i -= Time.deltaTime)
+        {
+            // set color with i as alpha
+            vignette.intensity.value = ((0.3f/0.6f) * i);
+            yield return null;
+        }
+    }
+
+    IEnumerator FadeVignette()
+    {
+        for (float i = 0; i <= 0.1f; i += Time.deltaTime)
+        {
+            // set color with i as alpha
+            vignette.intensity.value = ((0.3f/0.1f) * i);
+            yield return null;
+        }
+
+        for (float i = 0.6f; i >= 0; i -= Time.deltaTime)
+        {
+            // set color with i as alpha
+            vignette.intensity.value = ((0.3f/0.6f) * i);
+            yield return null;
         }
     }
 }
