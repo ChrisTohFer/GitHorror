@@ -46,7 +46,13 @@ public class PlayerManager : MonoBehaviour
     Color GreenColor = new Color(0, 0.6784314f, 0.2948871f);
     Color WhiteColor = new Color(1, 1, 1);
     Color RedColor = new Color(0.6226415f, 0, 0);
-    Color OrangeColor = new Color(0.6784314f, 0.4082189f, 0); 
+    Color OrangeColor = new Color(0.6784314f, 0.4082189f, 0);
+    bool m_playerDead = false;
+
+    public bool PlayerDead
+    {
+        get { return m_playerDead; }
+    }
 
     private void Awake()
     {
@@ -188,9 +194,10 @@ public class PlayerManager : MonoBehaviour
         PlayerStats.ChangeStat("health", -damage);
         AudioManager.PlayOnPlayer(AudioManager.AudioClips.PlayerTakeDamage);
 
-        if (PlayerStats.GetStat("health") == 0f)
+        if (PlayerStats.GetStat("health") == 0f && !m_playerDead)
         {
             //lose
+            m_playerDead = true;
             PlayerInteraction.enabled = false;
             Crossbow.enabled = false;
             FP.enabled = false;
@@ -202,7 +209,7 @@ public class PlayerManager : MonoBehaviour
             StartCoroutine("FadeInRed");
             //
         }
-        else
+        else if(!m_playerDead)
         {
             StartCoroutine(FP.CameraShake(CamShakeTime, CamShakeIntensity));
             //Law Code

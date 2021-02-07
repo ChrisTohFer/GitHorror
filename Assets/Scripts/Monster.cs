@@ -130,7 +130,7 @@ public class Monster : MonoBehaviour
             player.TakeDamage(Damage);
             m_attackActivated = true;
         }
-        if (m_stateTimer < 0)
+        if (m_stateTimer < 0 && !PlayerManager.Singleton.PlayerDead)
         {
             SetChasing();
         }
