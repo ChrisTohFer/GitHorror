@@ -31,6 +31,7 @@ public class Monster : MonoBehaviour
     public float StunDuration;
     public float IdleSoundProbabilityPerSecond = 0.1f;
     public Vector3 ShrinkPerSecond = Vector3.one / 2f;
+    public float HitStunThreshold = 1f;
 
     //
     Vector3 m_startPosition;
@@ -78,7 +79,7 @@ public class Monster : MonoBehaviour
     public void TakeDamage(float damage)
     {
         Health = Mathf.Clamp(Health - damage, 0f, 10000f);
-        if (Health > 0f)
+        if (Health > 0f && damage >= HitStunThreshold)
             SetHitstun();
     }
 
