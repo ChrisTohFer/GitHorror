@@ -3479,13 +3479,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4931645865086761579}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf1a5ad4f9ffb154ca7813fdad11017a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   controllerPauseState: 0
-  enableCameraMovement: 1
+  enableCameraMovement: 0
   mouseInputInversion: 0
   cameraInputMethod: 0
   verticalRotationRange: 170
@@ -3499,7 +3499,7 @@ MonoBehaviour:
   drawStaminaMeter: 1
   Crosshair: {fileID: 21300000, guid: 7fa7752f7f2a3fc4fbc2bcaea5671e2d, type: 3}
   targetAngles: {x: 0, y: 0, z: 0}
-  playerCanMove: 1
+  playerCanMove: 0
   walkByDefault: 1
   walkSpeed: 4
   sprintKey: 304
@@ -3651,7 +3651,7 @@ MonoBehaviour:
   weaponCamera: {fileID: 1782297715}
   defaultFov: 60
   aimingFov: 40
-  MinimumFireCharge: 0.5
+  MinimumFireCharge: 0.75
 --- !u!114 &212230590794768649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3671,7 +3671,7 @@ MonoBehaviour:
   CamShakeIntensity: 0.05
   StartingBolts: 3
   StartingMedKits: 0
-  MedKitHeal: 50
+  MedKitHeal: 60
   UI_Health: {fileID: 1389126172}
   UI_Kit1: {fileID: 295407014}
   UI_Kit2: {fileID: 2009356585}

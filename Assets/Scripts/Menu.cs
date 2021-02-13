@@ -60,7 +60,8 @@ public class Menu : MonoBehaviour
             yield return null;
         }
 
-        FPS.enabled = true;
+        FPS.playerCanMove = true;
+        FPS.enableCameraMovement = true;
         Crossbow.enabled = true;
     }
 

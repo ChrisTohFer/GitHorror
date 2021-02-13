@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: Health
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 796551975421589920, guid: a409b1b5abc0f9e4c9b9dd21d23aaceb, type: 3}
+      propertyPath: AttackActivationTime
+      value: 0.45
+      objectReference: {fileID: 0}
     - target: {fileID: 5005110605039274132, guid: a409b1b5abc0f9e4c9b9dd21d23aaceb, type: 3}
       propertyPath: m_Name
       value: MVariMedium

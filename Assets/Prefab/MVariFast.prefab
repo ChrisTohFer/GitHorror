@@ -8,8 +8,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2695233467989945803, guid: 8291b209c37384c4a843228cc7147789, type: 3}
+      propertyPath: Damage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2695233467989945803, guid: 8291b209c37384c4a843228cc7147789, type: 3}
       propertyPath: Health
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2695233467989945803, guid: 8291b209c37384c4a843228cc7147789, type: 3}
+      propertyPath: AttackDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2695233467989945803, guid: 8291b209c37384c4a843228cc7147789, type: 3}
+      propertyPath: HitStunThreshold
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2695233467989945803, guid: 8291b209c37384c4a843228cc7147789, type: 3}
+      propertyPath: AttackActivationTime
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 3053647457273684623, guid: 8291b209c37384c4a843228cc7147789, type: 3}
       propertyPath: m_Speed
