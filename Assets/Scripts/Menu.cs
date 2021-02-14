@@ -15,6 +15,7 @@ public class Menu : MonoBehaviour
     public AudioSource dreadhouseSound;
     public GameObject menu;
     public GameObject music;
+    public EndGame EndGame;
 
     public FirstPersonAIO FPS;
     public Crossbow Crossbow;
@@ -35,6 +36,11 @@ public class Menu : MonoBehaviour
             SceneManager.LoadScene("GameplayLevel", LoadSceneMode.Single);
         }
 
+        if (Input.GetKeyDown(KeyCode.Return) && EndGame.restartGame == true && keyPressed == true)
+        {
+            SceneManager.LoadScene("GameplayLevel", LoadSceneMode.Single);
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape) && keyPressed == true)
         {
             Application.Quit();
@@ -46,7 +52,7 @@ public class Menu : MonoBehaviour
         for (float i = 0; i <= fadeTimeIn; i += Time.deltaTime)
         {
             // set color with i as alpha
-            fadePanel.color = new Color(0, 0, 0, (i/ fadeTimeIn));
+            fadePanel.color = new Color(0.6117647f, 0.07843138f, 0.07843138f, (i/ fadeTimeIn));
             yield return null;
         }
 
@@ -56,7 +62,7 @@ public class Menu : MonoBehaviour
         for (float i = fadeTimeOut; i >= 0; i -= Time.deltaTime)
         {
             // set color with i as alpha
-            fadePanel.color = new Color(0, 0, 0, (i/ fadeTimeOut));
+            fadePanel.color = new Color(0.6117647f, 0.07843138f, 0.07843138f, (i/ fadeTimeOut));
             yield return null;
         }
 

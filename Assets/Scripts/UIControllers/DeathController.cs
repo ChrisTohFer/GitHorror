@@ -10,14 +10,16 @@ public class DeathController : MonoBehaviour
     public Image TitleImage;
     public Color TitleOutlineColor1, TitleOutlineColor2;
     private float time = 3f;
-    public GameObject StartObject;
-    private Text StartText;
+    public Text StartText, StartTextBG;
 
 
     private void Awake()
     {
-        StartText = StartObject.GetComponent<Text>();
         StartCoroutine(TurnFirstColour(time));
+        TitleImage.rectTransform.DOAnchorPosY(-225, 1, false);
+        StartText.rectTransform.DOAnchorPosY(125, 2, false);
+        StartTextBG.rectTransform.DOAnchorPosY(125, 2, false);
+
     }
 
     private IEnumerator TurnFirstColour(float changeTime)
