@@ -3212,7 +3212,8 @@ MonoBehaviour:
   TitleImage: {fileID: 8273172196064953978}
   TitleOutlineColor1: {r: 0.90588236, g: 0.3529412, b: 0.3529412, a: 1}
   TitleOutlineColor2: {r: 0.78431374, g: 0.73333335, b: 0.49019608, a: 1}
-  StartObject: {fileID: 1672351365687763845}
+  StartText: {fileID: 0}
+  StartTextBG: {fileID: 0}
 --- !u!1 &1020492944916849859
 GameObject:
   m_ObjectHideFlags: 0
@@ -4014,7 +4015,7 @@ MonoBehaviour:
   mouseInputInversion: 0
   cameraInputMethod: 0
   verticalRotationRange: 170
-  mouseSensitivity: 6.27
+  mouseSensitivity: 4.3
   fOVToMouseSensitivity: 0
   cameraSmoothing: 5
   lockAndHideCursor: 1
