@@ -31,17 +31,17 @@ public class Menu : MonoBehaviour
             StartCoroutine(FadeImage());
         }
 
-        if (Input.GetKeyDown(KeyCode.Return) && PlayerStats.GetStat("health") <= 0f && keyPressed == true)
+        if (Input.GetKeyDown(KeyCode.Return) && PlayerStats.GetStat("health") <= 0f)
         {
             SceneManager.LoadScene("GameplayLevel", LoadSceneMode.Single);
         }
 
-        if (Input.GetKeyDown(KeyCode.Return) && EndGame.restartGame == true && keyPressed == true)
+        if (Input.GetKeyDown(KeyCode.Return) && EndGame.restartGame == true)
         {
             SceneManager.LoadScene("GameplayLevel", LoadSceneMode.Single);
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && keyPressed == true)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
         }
